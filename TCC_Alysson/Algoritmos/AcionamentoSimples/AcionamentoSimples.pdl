@@ -1,0 +1,20 @@
+PROGRAM AcionamentoSimples PROG_ARM = 1
+  
+BEGIN -- Programa Principal
+CYCLE -- Loop Infinito
+
+-- Se o botão virtual U1 estiver sendo pressionado
+IF $FDIN[21] = ON THEN  
+  $DOUT[3] := ON  -- N¡vel l¢gico alto na sa¡da digital 3
+ELSE
+  $DOUT[3] := OFF -- N¡vel l¢gico baixo na sa¡da digital 3
+ENDIF
+-- Se o botão virtual U2 estiver sendo pressionado
+IF $FDIN[22] = ON THEN
+  $DOUT[4] := ON  -- N¡vel l¢gico alto na sa¡da digital 4
+ELSE
+  $DOUT[4] := OFF -- N¡vel l¢gico baixo na sa¡da digital 4
+ENDIF
+
+DELAY 100
+END AcionamentoSimples

@@ -1,0 +1,57 @@
+PROGRAM TCC_TesteGarra PROG_ARM = 1
+  
+VAR 
+  p1, p2, p3, p4, p5, p6, p7, p8, p9 : POSITION
+
+ROUTINE ABRIR_GARRA
+BEGIN
+  $DOUT[3] := ON
+  DELAY 3000
+  $DOUT[3] := OFF
+END ABRIR_GARRA
+
+ROUTINE FECHAR_GARRA
+BEGIN
+  $DOUT[4] := ON
+  DELAY 3000
+  $DOUT[4] := OFF
+END FECHAR_GARRA
+  
+BEGIN -- programa principal
+ 
+  MOVE JOINT TO p1   -- Move para Home
+  -- ------------------ Pega o 1º cubo
+  ABRIR_GARRA
+  MOVE JOINT TO p3   -- Posi‡ão intermedi ria 1
+  DELAY 1000
+  MOVE JOINT TO p2   -- Posi‡ão inicial do 1º cubo
+  DELAY 1000
+  FECHAR_GARRA
+  MOVE JOINT TO p3   -- Posi‡ão intermedi ria 1
+  -- ------------------ Posiciona o 1º cubo
+  MOVE JOINT TO p5  -- Posi‡ão intermedi ria 2   
+  DELAY 1000
+  MOVE JOINT TO p4  -- Posi‡ão final do 1º cubo
+  DELAY 1000
+  ABRIR_GARRA
+  MOVE JOINT TO p5  -- Posi‡ão intermedi ria 2
+  -- ------------------ Pega o 2º cubo
+  MOVE JOINT TO p7   -- Posi‡ão intermedi ria 3
+  DELAY 1000
+  MOVE JOINT TO p6   -- Posi‡ão inicial do 2º cubo
+  DELAY 1000
+  FECHAR_GARRA
+  MOVE JOINT TO p7   -- Posi‡ão intermedi ria 3
+  DELAY 1000
+  -- ------------------ Empilha o 2º cubo
+  MOVE JOINT TO p9  -- Posi‡ão intermedi ria 4
+  DELAY 1000
+  MOVE JOINT TO p8  -- Posi‡ão final do 2º cubo
+  DELAY 2000
+  ABRIR_GARRA
+  MOVE JOINT TO p9  -- Posi‡ão intermedi ria 4
+  DELAY 1000
+  -- ------------------
+  MOVE JOINT TO p1   -- Move para Home
+  
+END TCC_TesteGarra

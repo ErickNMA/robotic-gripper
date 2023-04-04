@@ -1,0 +1,9 @@
+TesteProtocolo:
+
+Algoritmo para ser carregado em um Arduino externo, para simular o envio de dados por parte da controladora C5G.
+
+TCC_Protocolo:
+
+Função em PDL2 que realiza o envio dos parâmetros para a ferramenta, através do protocolo definido.
+
+Pode ser reaproveitada no desenvolvimento de códigos para o robô que utilizem a garra como ferramenta.
